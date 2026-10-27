@@ -59,6 +59,7 @@
   "users": [
     {
       "id": "usr-worker-1",
+      "email": "ramesh.kumar@gmail.com",
       "displayName": "Ramesh Kumar",
       "role": "worker",
       "title": "Senior Mason & Shuttering Craftsman",
@@ -70,6 +71,7 @@
     },
     {
       "id": "usr-worker-2",
+      "email": "sunita.devi@gmail.com",
       "displayName": "Sunita Devi",
       "role": "worker",
       "title": "Structural Painter & Finisher",
@@ -81,6 +83,7 @@
     },
     {
       "id": "usr-worker-3",
+      "email": "rajesh.sharma@gmail.com",
       "displayName": "Rajesh Sharma",
       "role": "worker",
       "title": "HVAC & Plumbing Technician",
@@ -92,6 +95,7 @@
     },
     {
       "id": "usr-worker-4",
+      "email": "priya.nair@gmail.com",
       "displayName": "Priya Nair",
       "role": "worker",
       "title": "Mess & Sanitation Lead",
@@ -103,6 +107,7 @@
     },
     {
       "id": "usr-admin-con",
+      "email": "vikram.singh@gmail.com",
       "displayName": "Vikram Singh",
       "role": "admin",
       "title": "Site Operations Director",
@@ -113,6 +118,7 @@
     },
     {
       "id": "usr-admin-col",
+      "email": "aruna.rao@gmail.com",
       "displayName": "Dr. Aruna Rao",
       "role": "admin",
       "title": "Registrar & Campus Operations Head",
@@ -123,6 +129,7 @@
     },
     {
       "id": "usr-reviewer-safety",
+      "email": "kavita.patel@gmail.com",
       "displayName": "Kavita Patel",
       "role": "reviewer",
       "title": "Occupational Safety & Grievance Officer",
@@ -132,49 +139,19 @@
       "active": true
     },
     {
-      "id": "usr-gm-1793082458707",
-      "email": "sandeep@gmail.com",
-      "displayName": "Sandeep",
+      "id": "usr-gm-1793083988255",
+      "email": "sandeep.test.1793083988252@gmail.com",
+      "displayName": "Sandeep Test 1793083988252",
       "role": "worker",
       "title": "Field Craftsman",
       "organizationId": "org-construction",
-      "workerId": "w-gm-8706",
+      "workerId": "w-gm-8254",
       "preferredLanguage": "en",
       "active": true,
       "authProvider": "gmail_prototype",
       "isPrototypeGmail": true,
-      "createdAt": "2026-10-27T06:27:38.708Z",
-      "updatedAt": "2026-10-27T06:27:38.708Z"
-    },
-    {
-      "id": "usr-gm-1793082589271",
-      "email": "vikram.singh@gmail.com",
-      "displayName": "Vikram Singh",
-      "role": "worker",
-      "title": "Field Craftsman",
-      "organizationId": "org-construction",
-      "workerId": "w-gm-9270",
-      "preferredLanguage": "en",
-      "active": true,
-      "authProvider": "gmail_prototype",
-      "isPrototypeGmail": true,
-      "createdAt": "2026-10-27T06:29:49.271Z",
-      "updatedAt": "2026-10-27T06:29:49.271Z"
-    },
-    {
-      "id": "usr-gm-1793083388663",
-      "email": "sandeep844@gmail.com",
-      "displayName": "Sandeep844",
-      "role": "worker",
-      "title": "Field Craftsman",
-      "organizationId": "org-construction",
-      "workerId": "w-gm-8662",
-      "preferredLanguage": "en",
-      "active": true,
-      "authProvider": "gmail_prototype",
-      "isPrototypeGmail": true,
-      "createdAt": "2026-10-27T06:43:08.663Z",
-      "updatedAt": "2026-10-27T06:43:08.663Z"
+      "createdAt": "2026-10-27T06:53:08.255Z",
+      "updatedAt": "2026-10-27T06:53:08.255Z"
     }
   ],
   "workers": [
@@ -227,9 +204,9 @@
       "joinedDate": "2024-01-10"
     },
     {
-      "id": "w-gm-8706",
+      "id": "w-gm-8254",
       "organizationId": "org-construction",
-      "displayName": "Sandeep",
+      "displayName": "Sandeep Test 1793083988252",
       "departmentOrSite": "Sector 7 Viaduct",
       "jobRole": "Field Craftsman",
       "wageType": "daily",
@@ -237,36 +214,8 @@
       "overtimeRate": 120,
       "active": true,
       "joinedDate": "2026-10-27",
-      "createdAt": "2026-10-27T06:27:38.707Z",
-      "updatedAt": "2026-10-27T06:27:38.707Z"
-    },
-    {
-      "id": "w-gm-9270",
-      "organizationId": "org-construction",
-      "displayName": "Vikram Singh",
-      "departmentOrSite": "Sector 7 Viaduct",
-      "jobRole": "Field Craftsman",
-      "wageType": "daily",
-      "baseRate": 600,
-      "overtimeRate": 120,
-      "active": true,
-      "joinedDate": "2026-10-27",
-      "createdAt": "2026-10-27T06:29:49.270Z",
-      "updatedAt": "2026-10-27T06:29:49.270Z"
-    },
-    {
-      "id": "w-gm-8662",
-      "organizationId": "org-construction",
-      "displayName": "Sandeep844",
-      "departmentOrSite": "Sector 7 Viaduct",
-      "jobRole": "Field Craftsman",
-      "wageType": "daily",
-      "baseRate": 600,
-      "overtimeRate": 120,
-      "active": true,
-      "joinedDate": "2026-10-27",
-      "createdAt": "2026-10-27T06:43:08.662Z",
-      "updatedAt": "2026-10-27T06:43:08.662Z"
+      "createdAt": "2026-10-27T06:53:08.254Z",
+      "updatedAt": "2026-10-27T06:53:08.254Z"
     }
   ],
   "attendanceRecords": [
@@ -360,9 +309,9 @@
       "source": "biometric_kiosk"
     },
     {
-      "id": "att-w-gm-8706-1",
+      "id": "att-w-gm-8254-1",
       "organizationId": "org-construction",
-      "workerId": "w-gm-8706",
+      "workerId": "w-gm-8254",
       "period": "2026-10",
       "regularDays": 20,
       "regularHours": 160,
@@ -370,36 +319,8 @@
       "leaveDays": 2,
       "status": "approved",
       "source": "biometric_kiosk",
-      "createdAt": "2026-10-27T06:27:38.708Z",
-      "updatedAt": "2026-10-27T06:27:38.708Z"
-    },
-    {
-      "id": "att-w-gm-9270-1",
-      "organizationId": "org-construction",
-      "workerId": "w-gm-9270",
-      "period": "2026-10",
-      "regularDays": 20,
-      "regularHours": 160,
-      "approvedOvertimeHours": 4,
-      "leaveDays": 2,
-      "status": "approved",
-      "source": "biometric_kiosk",
-      "createdAt": "2026-10-27T06:29:49.271Z",
-      "updatedAt": "2026-10-27T06:29:49.271Z"
-    },
-    {
-      "id": "att-w-gm-8662-1",
-      "organizationId": "org-construction",
-      "workerId": "w-gm-8662",
-      "period": "2026-10",
-      "regularDays": 20,
-      "regularHours": 160,
-      "approvedOvertimeHours": 4,
-      "leaveDays": 2,
-      "status": "approved",
-      "source": "biometric_kiosk",
-      "createdAt": "2026-10-27T06:43:08.664Z",
-      "updatedAt": "2026-10-27T06:43:08.664Z"
+      "createdAt": "2026-10-27T06:53:08.256Z",
+      "updatedAt": "2026-10-27T06:53:08.256Z"
     }
   ],
   "payRecords": [
@@ -492,10 +413,10 @@
       "updatedAt": "2026-10-25T10:00:00.000Z"
     },
     {
-      "id": "pay-w-gm-8706-1",
+      "id": "pay-w-gm-8254-1",
       "organizationId": "org-construction",
-      "workerId": "w-gm-8706",
-      "workerName": "Sandeep",
+      "workerId": "w-gm-8254",
+      "workerName": "Sandeep Test 1793083988252",
       "periodStart": "2026-10-01",
       "periodEnd": "2026-10-15",
       "periodLabel": "01 Oct 2026 - 15 Oct 2026 (Fortnight 1)",
@@ -518,68 +439,8 @@
         "overtimeFormula": "4 approved OT hours × ₹120/hr = ₹480",
         "deductionsFormula": "PF deduction = -₹200"
       },
-      "createdAt": "2026-10-27T06:27:38.709Z",
-      "updatedAt": "2026-10-27T06:27:38.709Z"
-    },
-    {
-      "id": "pay-w-gm-9270-1",
-      "organizationId": "org-construction",
-      "workerId": "w-gm-9270",
-      "workerName": "Vikram Singh",
-      "periodStart": "2026-10-01",
-      "periodEnd": "2026-10-15",
-      "periodLabel": "01 Oct 2026 - 15 Oct 2026 (Fortnight 1)",
-      "wageType": "daily",
-      "baseRate": 600,
-      "regularUnits": 20,
-      "approvedOvertimeHours": 4,
-      "overtimeRate": 120,
-      "basePay": 12000,
-      "overtimePay": 480,
-      "additions": 0,
-      "deductions": 200,
-      "expectedNetPay": 12280,
-      "recordedPayment": 11000,
-      "currency": "INR",
-      "status": "discrepancy_flagged",
-      "calculationVersion": "1.0.0-deterministic",
-      "formulaBreakdown": {
-        "baseFormula": "20 days worked × ₹600/day = ₹12,000",
-        "overtimeFormula": "4 approved OT hours × ₹120/hr = ₹480",
-        "deductionsFormula": "PF deduction = -₹200"
-      },
-      "createdAt": "2026-10-27T06:29:49.272Z",
-      "updatedAt": "2026-10-27T06:29:49.272Z"
-    },
-    {
-      "id": "pay-w-gm-8662-1",
-      "organizationId": "org-construction",
-      "workerId": "w-gm-8662",
-      "workerName": "Sandeep844",
-      "periodStart": "2026-10-01",
-      "periodEnd": "2026-10-15",
-      "periodLabel": "01 Oct 2026 - 15 Oct 2026 (Fortnight 1)",
-      "wageType": "daily",
-      "baseRate": 600,
-      "regularUnits": 20,
-      "approvedOvertimeHours": 4,
-      "overtimeRate": 120,
-      "basePay": 12000,
-      "overtimePay": 480,
-      "additions": 0,
-      "deductions": 200,
-      "expectedNetPay": 12280,
-      "recordedPayment": 11000,
-      "currency": "INR",
-      "status": "discrepancy_flagged",
-      "calculationVersion": "1.0.0-deterministic",
-      "formulaBreakdown": {
-        "baseFormula": "20 days worked × ₹600/day = ₹12,000",
-        "overtimeFormula": "4 approved OT hours × ₹120/hr = ₹480",
-        "deductionsFormula": "PF deduction = -₹200"
-      },
-      "createdAt": "2026-10-27T06:43:08.664Z",
-      "updatedAt": "2026-10-27T06:43:08.664Z"
+      "createdAt": "2026-10-27T06:53:08.256Z",
+      "updatedAt": "2026-10-27T06:53:08.256Z"
     }
   ],
   "grievances": [
@@ -617,7 +478,7 @@
       "assignedReviewerName": null,
       "resolutionNote": null,
       "createdAt": "2026-10-26T09:00:00.000Z",
-      "updatedAt": "2026-10-27T06:20:55.891Z"
+      "updatedAt": "2026-10-27T06:53:08.229Z"
     },
     {
       "id": "grv-003",
@@ -651,9 +512,9 @@
       "assignedReviewerId": null,
       "assignedReviewerName": null,
       "resolutionNote": null,
-      "id": "gri-1793082055886-934",
-      "createdAt": "2026-10-27T06:20:55.886Z",
-      "updatedAt": "2026-10-27T06:20:55.886Z"
+      "id": "gri-1793083988222-356",
+      "createdAt": "2026-10-27T06:53:08.222Z",
+      "updatedAt": "2026-10-27T06:53:08.222Z"
     }
   ],
   "grievanceEvents": [
@@ -730,7 +591,7 @@
       "timestamp": "2026-10-22T16:00:00.000Z"
     },
     {
-      "grievanceId": "gri-1793082055886-934",
+      "grievanceId": "gri-1793083988222-356",
       "actorId": "w-101",
       "actorName": "Ramesh Kumar",
       "actorRole": "worker",
@@ -738,10 +599,10 @@
       "fromStatus": null,
       "toStatus": "submitted",
       "note": "Concern submitted and case number generated.",
-      "timestamp": "2026-10-27T06:20:55.887Z",
-      "id": "gri-1793082055887-82",
-      "createdAt": "2026-10-27T06:20:55.887Z",
-      "updatedAt": "2026-10-27T06:20:55.887Z"
+      "timestamp": "2026-10-27T06:53:08.223Z",
+      "id": "gri-1793083988223-516",
+      "createdAt": "2026-10-27T06:53:08.223Z",
+      "updatedAt": "2026-10-27T06:53:08.223Z"
     },
     {
       "grievanceId": "grv-002",
@@ -752,10 +613,10 @@
       "fromStatus": "submitted",
       "toStatus": "under_review",
       "note": "Site manager has contacted payroll to cross-verify shift sheet.",
-      "timestamp": "2026-10-27T06:20:55.891Z",
-      "id": "gri-1793082055891-712",
-      "createdAt": "2026-10-27T06:20:55.891Z",
-      "updatedAt": "2026-10-27T06:20:55.891Z"
+      "timestamp": "2026-10-27T06:53:08.229Z",
+      "id": "gri-1793083988229-822",
+      "createdAt": "2026-10-27T06:53:08.229Z",
+      "updatedAt": "2026-10-27T06:53:08.229Z"
     }
   ],
   "riskAlerts": [
@@ -805,12 +666,12 @@
       "title": "SAFETY Concern: Case KS-CON-2026-004",
       "description": "Missing safety harness anchor points on the overhead gantry.",
       "ruleExplanation": "Automated alert triggered because an unresolved HIGH priority safety concern was lodged.",
-      "relatedRecordId": "gri-1793082055886-934",
+      "relatedRecordId": "gri-1793083988222-356",
       "reviewed": false,
       "suggestedAction": "Review worker statement and assign designated safety/grievance officer.",
-      "createdAt": "2026-10-27T06:20:55.887Z",
-      "id": "ris-1793082055887-423",
-      "updatedAt": "2026-10-27T06:20:55.887Z"
+      "createdAt": "2026-10-27T06:53:08.223Z",
+      "id": "ris-1793083988223-863",
+      "updatedAt": "2026-10-27T06:53:08.223Z"
     }
   ],
   "skills": [
