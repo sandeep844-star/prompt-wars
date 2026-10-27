@@ -1,0 +1,185 @@
+/* KaamSetu - Unified Design System Tokens & Base Styles */
+:root {
+  --brand-950: #102A43;
+  --brand-800: #164E63;
+  --brand-700: #0F766E;
+  --brand-600: #0D9488;
+  --brand-100: #CCFBF1;
+  --surface: #FFFFFF;
+  --surface-muted: #F4F8FA;
+  --text-primary: #102A43;
+  --text-secondary: #526777;
+  --border: #D8E3E8;
+  --border-focus: #0D9488;
+  --success: #15803D;
+  --success-bg: #DCFCE7;
+  --warning: #B45309;
+  --warning-bg: #FEF3C7;
+  --danger: #B91C1C;
+  --danger-bg: #FEE2E2;
+  --info: #1D4ED8;
+  --info-bg: #DBEAFE;
+
+  --gradient-primary: linear-gradient(135deg, #164E63 0%, #0F766E 55%, #0D9488 100%);
+  --gradient-dashboard: linear-gradient(135deg, #102A43 0%, #164E63 100%);
+  --gradient-welcome: linear-gradient(135deg, #E6FFFA 0%, #F0FDFA 55%, #FFFFFF 100%);
+  --gradient-success: linear-gradient(135deg, #166534 0%, #15803D 100%);
+  --gradient-glass: rgba(255, 255, 255, 0.85);
+
+  --shadow-sm: 0 1px 2px 0 rgba(16, 42, 67, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(16, 42, 67, 0.08), 0 2px 4px -1px rgba(16, 42, 67, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(16, 42, 67, 0.1), 0 4px 6px -2px rgba(16, 42, 67, 0.05);
+  --shadow-hover: 0 12px 20px -3px rgba(16, 42, 67, 0.12), 0 6px 8px -2px rgba(16, 42, 67, 0.06);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--surface-muted);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--brand-700);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Accessibility Focus Ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Base Utility Classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--brand-700);
+  color: #FFFFFF;
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--brand-600);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--surface);
+  color: var(--brand-950);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: #F8FAFC;
+  border-color: var(--brand-600);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: #FFFFFF;
+}
+.btn-danger:hover:not(:disabled) {
+  background-color: #991B1B;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.badge-success {
+  background-color: var(--success-bg);
+  color: var(--success);
+}
+.badge-warning {
+  background-color: var(--warning-bg);
+  color: var(--warning);
+}
+.badge-danger {
+  background-color: var(--danger-bg);
+  color: var(--danger);
+}
+.badge-info {
+  background-color: var(--info-bg);
+  color: var(--info);
+}
+.badge-brand {
+  background-color: var(--brand-100);
+  color: var(--brand-800);
+}
+
+/* Cards */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
