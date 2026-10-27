@@ -37,9 +37,9 @@ export default function LoginPage({ onLoginSuccess }) {
       setSuccessMessage(res.message || 'Signed in successfully! Loading your workplace dashboard...');
       setTimeout(() => {
         if (onLoginSuccess) {
-          onLoginSuccess(res.user);
+          onLoginSuccess(res);
         }
-      }, 400);
+      }, 300);
     } catch (err) {
       setError(err.message || "We couldn't verify your account. Please try again.");
     } finally {

@@ -371,8 +371,8 @@ export const clientFallbackStore = {
   getMe: (userId) => {
     const data = getLocalData();
     const user = data.users.find(u => u.id === userId) || data.users[0];
-    const organization = data.organizations.find(o => o.id === user.organizationId);
-    const workerProfile = user.workerId ? data.workers.find(w => w.id === user.workerId) : null;
+    const organization = data.organizations.find(o => o.id === user?.organizationId) || data.organizations[0];
+    const workerProfile = user?.workerId ? data.workers.find(w => w.id === user.workerId) : null;
     return { user, organization, workerProfile };
   },
 
@@ -475,7 +475,7 @@ export const clientFallbackStore = {
       saveLocalData(data);
     }
 
-    const organization = data.organizations.find(o => o.id === user.organizationId);
+    const organization = data.organizations.find(o => o.id === user.organizationId) || data.organizations[0];
     const workerProfile = user.workerId ? data.workers.find(w => w.id === user.workerId) : null;
 
     return {
@@ -491,7 +491,7 @@ export const clientFallbackStore = {
   demoLogin: (userId) => {
     const data = getLocalData();
     const user = data.users.find(u => u.id === userId) || data.users[0];
-    const organization = data.organizations.find(o => o.id === user.organizationId);
+    const organization = data.organizations.find(o => o.id === user.organizationId) || data.organizations[0];
     const workerProfile = user.workerId ? data.workers.find(w => w.id === user.workerId) : null;
     return {
       message: 'Demo login successful.',

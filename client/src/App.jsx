@@ -38,43 +38,66 @@ export default function App() {
   const [workersList, setWorkersList] = useState([]);
   const [adminGrievances, setAdminGrievances] = useState([]);
 
+  // Handle successful login
+  const handleLoginSuccess = (loginPayload) => {
+    if (loginPayload && loginPayload.user) {
+      setCurrentUser(loginPayload.user);
+      if (loginPayload.organization) setCurrentOrg(loginPayload.organization);
+      if (loginPayload.workerProfile) setWorkerProfile(loginPayload.workerProfile);
+      if (loginPayload.user?.preferredLanguage) setLang(loginPayload.user.preferredLanguage);
+    }
+    loadSession(false);
+  };
+
   // Load initial session and demo users
-  const loadSession = async () => {
+  const loadSession = async (showLoading = true) => {
     try {
-      setLoading(true);
+      if (showLoading) setLoading(true);
       setError(null);
 
       // Check if there is an active session
       const savedSession = getSession();
-      if (!savedSession) {
+      if (!savedSession || (!savedSession.userId && !savedSession.user)) {
         // User is not signed in yet; render LoginPage
         setCurrentUser(null);
         setLoading(false);
         return;
       }
 
+      // Restore user immediately from session cache if available
+      if (savedSession.user) {
+        setCurrentUser(savedSession.user);
+        if (savedSession.organization) setCurrentOrg(savedSession.organization);
+        if (savedSession.workerProfile) setWorkerProfile(savedSession.workerProfile);
+        if (savedSession.user.preferredLanguage) setLang(savedSession.user.preferredLanguage);
+      }
+
       // 1. Fetch available demo personas
-      const usersRes = await api.getDemoUsers();
-      setDemoUsers(usersRes.users || []);
+      const usersRes = await api.getDemoUsers().catch(() => ({ users: [] }));
+      if (usersRes?.users) setDemoUsers(usersRes.users);
 
       // 2. Fetch current user context
-      const meRes = await api.getMe();
-      if (!meRes || !meRes.user) {
+      const meRes = await api.getMe().catch(() => null);
+      const activeUser = meRes?.user || savedSession.user;
+
+      if (!activeUser) {
         clearSession();
         setCurrentUser(null);
         setLoading(false);
         return;
       }
 
-      setCurrentUser(meRes.user);
-      setCurrentOrg(meRes.organization);
-      setWorkerProfile(meRes.workerProfile);
-      if (meRes.user?.preferredLanguage) {
-        setLang(meRes.user.preferredLanguage);
+      setCurrentUser(activeUser);
+      const activeOrg = meRes?.organization || savedSession.organization;
+      if (activeOrg) setCurrentOrg(activeOrg);
+      const activeProfile = meRes?.workerProfile || savedSession.workerProfile;
+      if (activeProfile) setWorkerProfile(activeProfile);
+      if (activeUser?.preferredLanguage) {
+        setLang(activeUser.preferredLanguage);
       }
 
       // 3. Set default tab based on role
-      if (meRes.user?.role === 'worker') {
+      if (activeUser?.role === 'worker') {
         setActiveTab('home');
         // Fetch worker specific data
         const [payRes, attRes, grvRes, sklRes] = await Promise.all([
@@ -83,10 +106,10 @@ export default function App() {
           api.getMyGrievances().catch(() => ({ grievances: [] })),
           api.getMySkills().catch(() => ({ skills: [] }))
         ]);
-        setPayRecords(payRes.payRecords || []);
-        setAttendance(attRes.attendance || []);
-        setWorkerGrievances(grvRes.grievances || []);
-        setWorkerSkills(sklRes.skills || []);
+        setPayRecords(payRes?.payRecords || []);
+        setAttendance(attRes?.attendance || []);
+        setWorkerGrievances(grvRes?.grievances || []);
+        setWorkerSkills(sklRes?.skills || []);
       } else {
         setActiveTab('overview');
         // Fetch admin specific data
@@ -95,15 +118,18 @@ export default function App() {
           api.getWorkersList().catch(() => ({ workers: [] })),
           api.getAllGrievances().catch(() => ({ grievances: [] }))
         ]);
-        setDashboardSummary(sumRes.summary);
-        setWorkersList(wrkRes.workers || []);
-        setAdminGrievances(grvRes.grievances || []);
+        setDashboardSummary(sumRes?.summary || null);
+        setWorkersList(wrkRes?.workers || []);
+        setAdminGrievances(grvRes?.grievances || []);
       }
     } catch (err) {
-      console.error('Session load error:', err);
-      // If fetching me failed due to invalid token/id, clear and prompt login
-      clearSession();
-      setCurrentUser(null);
+      console.warn('Session load notice:', err);
+      // Only clear session if we have NO saved session at all
+      const savedSession = getSession();
+      if (!savedSession || (!savedSession.userId && !savedSession.user)) {
+        clearSession();
+        setCurrentUser(null);
+      }
     } finally {
       setLoading(false);
     }
@@ -116,8 +142,12 @@ export default function App() {
   // Switch demo user persona
   const handleSwitchUser = async (userId) => {
     try {
-      await api.demoLogin(userId);
-      await loadSession();
+      const res = await api.demoLogin(userId);
+      if (res && res.user) {
+        handleLoginSuccess(res);
+      } else {
+        await loadSession(false);
+      }
     } catch (err) {
       alert('Error switching user: ' + err.message);
     }
@@ -187,9 +217,7 @@ export default function App() {
   if (!currentUser) {
     return (
       <LoginPage
-        onLoginSuccess={() => {
-          loadSession();
-        }}
+        onLoginSuccess={handleLoginSuccess}
       />
     );
   }
